@@ -1,0 +1,69 @@
+"
+"	author:liushiyao
+"	create_time:2017?12?25?
+"
+"
+
+syntax on	"??????"
+set number	"????"
+set autoindent 	"???????????????"
+set tabstop=4	"??TABLE?4???"
+set history=100 "??????"
+set showmatch	"?????????"
+"set cursorline	"?????"
+set enc=utf-8	"??????"
+set ruler         " show the cursor position all the time
+set cursorline cursorcolumn
+set nocompatible "???????vi???????????????bug???"
+"????
+
+syntax enable "??????
+"molokai solarized
+colorscheme molokai
+
+
+"Nerd Tree
+let NERDChristmasTree=0
+let NERDTreeWinSize=40
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
+let NERDTreeShowBookmarks=1
+let NERDTreeWinPos="left"
+autocmd vimenter * if !argc() | NERDTree | endif         " Automatically open a NERDTree if no files where specified
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " Close vim if the only window left open is a NERDTree
+nmap <F5> :NERDTreeToggle<cr>
+
+
+
+
+"Neocomplete
+"Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 1
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+
+
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif
+
+"????????
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
+
+
