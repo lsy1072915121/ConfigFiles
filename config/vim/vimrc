@@ -1,25 +1,25 @@
 "
 "	author:liushiyao
-"	create_time:2017?12?25?
+"	create_time:2017年12月25日
 "
 "
 
-syntax on	"??????"
-set number	"????"
-set autoindent 	"???????????????"
-set tabstop=4	"??TABLE?4???"
-set history=100 "??????"
-set showmatch	"?????????"
-"set cursorline	"?????"
-set enc=utf-8	"??????"
+syntax on	"自动语法高亮"
+set number	"显示行号"
+set autoindent 	"把当前行的对齐格式应用到下一行"
+set tabstop=4	"设置TABLE为4个空格"
+set history=100 "设置历史记录"
+set showmatch	"高亮显示匹配的括号"
+"set cursorline	"突显当前行"
+set enc=utf-8	"设置编码方式"
 set ruler         " show the cursor position all the time
-set cursorline cursorcolumn
-set nocompatible "???????vi???????????????bug???"
-"????
+set cursorline cursorcolumn 
+set nocompatible "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限"
+"高亮主题
 
-syntax enable "??????
+syntax enable "开启语法高亮
 "molokai solarized
-colorscheme molokai
+colorscheme molokai 
 
 
 "Nerd Tree
@@ -61,7 +61,7 @@ if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
 
-"????????
+"加载插件配置文件
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
